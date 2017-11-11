@@ -7,7 +7,7 @@ A **grails 3** and **vuejs 2** starter project
 * vue-router: 3.0.1
 * vuex-router-sync: 5.0.0
 ### Project structure
-Grails `rest-api` profile used in the project.<br>
+Grails `rest-api` profile is used in this project.<br>
 Vue app is placed under `src/app` directory with following modification on `config/index.js`:
 ```
 index: path.resolve(__dirname, '../../main/webapp/index.html'),
