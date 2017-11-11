@@ -1,5 +1,5 @@
 # Bootview
-A **grails 3** and **vuejs 2** kickstart project
+A **grails 3** and **vuejs 2** starter project
 ### What's included
 * Grails: 3.3.1
 * Vue js: 2.5.2
