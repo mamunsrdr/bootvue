@@ -1,6 +1,10 @@
 language: groovy
-
 jdk:
   - openjdk8
-
-script: ./gradlew build
+env:
+  global:
+    - TERM=dumb
+install:
+  - /bin/true
+script:
+  - ./gradlew build
