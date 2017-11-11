@@ -1,8 +1,8 @@
-# Bootview
+# BootVue [![Build Status](https://travis-ci.org/mamunsrdr/bootvue.svg?branch=master)](https://travis-ci.org/mamunsrdr/bootvue)
 A **grails 3** and **vuejs 2** starter project
 ### What's included
-* Grails: 3.3.1
-* Vue js: 2.5.2
+* grails: 3.3.1
+* vue js: 2.5.2
 * vuex: 3.0.1
 * vue-router: 3.0.1
 * vuex-router-sync: 5.0.0
