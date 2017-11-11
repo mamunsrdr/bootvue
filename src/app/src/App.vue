@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/grails-logo.png" width="160px" height="160px">
+    <img src="./assets/logo.png" width="160px" height="160px">
     <router-view/>
   </div>
 </template>
