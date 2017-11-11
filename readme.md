@@ -6,6 +6,7 @@ A **grails 3** and **vuejs 2** starter project<br>
 * grails: 3.3.1
 * vue js: 2.5.2
 * vuex: 3.0.1
+* vue-resource: 1.3.4
 * vue-router: 3.0.1
 * vuex-router-sync: 5.0.0
 ### Project structure
@@ -37,19 +38,19 @@ node {
 task buildAppDev(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'build'
     description = 'Compile client side assets for development'
-    args = ['run', 'build']
+    args = ['run', 'buildDev']
 }
 
-task buildApp(type: NpmTask, dependsOn: 'npmInstall') {
+task buildAppProd(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'build'
     description = 'Compile client side assets for production'
-    args = ['run', 'build']
+    args = ['run', 'buildProd']
 }
 
 task testApp(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'verification'
     description = 'Executes client side unit tests'
-//    args = ['run', 'test']
+    //args = ['run', 'test']
     args = ['run', 'unit']
 }
 
