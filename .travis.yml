@@ -1,5 +1,5 @@
 language: groovy
 
 before_script:
-  - rm -rf target
+  - chmod +x gradlew
 script: ./travis-build.sh
