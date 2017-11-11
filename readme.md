@@ -55,7 +55,7 @@ task testApp(type: NpmTask, dependsOn: 'npmInstall') {
 
 bootRun.dependsOn(buildAppDev)
 
-war.dependsOn(buildApp)
+war.dependsOn(buildAppProd)
 
 test.dependsOn(testApp)
 
