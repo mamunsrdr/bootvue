@@ -50,8 +50,7 @@ task buildAppProd(type: NpmTask, dependsOn: 'npmInstall') {
 task testApp(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'verification'
     description = 'Executes client side unit tests'
-    //args = ['run', 'test']
-    args = ['run', 'unit']
+    args = ['run', 'test']
 }
 
 bootRun.dependsOn(buildAppDev)
