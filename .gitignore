@@ -1,5 +1,5 @@
-build
-idea
+/build
+/idea
 node_modules
 .DS_Store
 
