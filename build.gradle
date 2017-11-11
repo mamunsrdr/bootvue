@@ -12,7 +12,7 @@ buildscript {
 }
 
 version "0.1"
-group "bootvue"
+group "com.bootvue"
 
 apply plugin: "war"
 apply plugin: "idea"
@@ -75,13 +75,13 @@ node {
 task buildAppDev(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'build'
     description = 'Compile client side assets for development'
-    args = ['run', 'build']
+    args = ['run', 'buildDev']
 }
 
-task buildApp(type: NpmTask, dependsOn: 'npmInstall') {
+task buildAppProd(type: NpmTask, dependsOn: 'npmInstall') {
     group = 'build'
     description = 'Compile client side assets for production'
-    args = ['run', 'build']
+    args = ['run', 'buildProd']
 }
 
 task testApp(type: NpmTask, dependsOn: 'npmInstall') {
@@ -93,7 +93,7 @@ task testApp(type: NpmTask, dependsOn: 'npmInstall') {
 
 bootRun.dependsOn(buildAppDev)
 
-war.dependsOn(buildApp)
+war.dependsOn(buildAppProd)
 
 test.dependsOn(testApp)
 

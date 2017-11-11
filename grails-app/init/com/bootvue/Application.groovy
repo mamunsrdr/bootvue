@@ -1,4 +1,4 @@
-package bootvue
+package com.bootvue
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

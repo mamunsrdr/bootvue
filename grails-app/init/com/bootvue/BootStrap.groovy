@@ -1,4 +1,4 @@
-package bootvue
+package com.bootvue
 
 class BootStrap {
 

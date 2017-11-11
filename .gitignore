@@ -4,6 +4,7 @@ node_modules
 .DS_Store
 
 # log
+syslog/
 yarn-debug.log*
 yarn-error.log*
 selenium-debug.log*

@@ -2,7 +2,7 @@
 grails:
     profile: rest-api
     codegen:
-        defaultPackage: bootvue
+        defaultPackage: com.bootvue
     spring:
         transactionManagement:
             proxies: false
