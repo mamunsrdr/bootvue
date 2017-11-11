@@ -1,4 +1,4 @@
-# pwvue
+# bootvue
 
 > A Vue.js project
 

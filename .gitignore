@@ -3,9 +3,10 @@ idea
 node_modules
 .DS_Store
 
-# yarn
+# log
 yarn-debug.log*
 yarn-error.log*
+selenium-debug.log*
 
 # Editor directories and files
 .idea
