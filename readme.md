@@ -1,6 +1,6 @@
 # BootVue [![Build Status](https://travis-ci.org/mamunsrdr/bootvue.svg?branch=master)](https://travis-ci.org/mamunsrdr/bootvue)
 A **grails 3** and **vuejs 2** starter project<br>
-[![App in action](https://i.imgur.com/IgIkC7Pl.png)]
+(https://i.imgur.com/IgIkC7Pl.png)
 
 ### What's included
 * grails: 3.3.1
