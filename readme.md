@@ -15,6 +15,59 @@ Vue app is placed under `src/app` directory with following modification on `conf
 index: path.resolve(__dirname, '../../main/webapp/index.html'),
 assetsRoot: path.resolve(__dirname, '../../main/webapp'),
 ```
+### Gradle plugin and tasks
+```
+buildscript {
+    // ... other configs ...
+    dependencies {
+        // ... other classpath dependencies ...
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+    }
+}
+// apply plugin
+apply plugin: "com.moowork.node"
+```
+```
+node {
+    version = '9.1.0'
+    download = true
+    nodeModulesDir = file("src/app")
+}
+
+task buildAppDev(type: NpmTask, dependsOn: 'npmInstall') {
+    group = 'build'
+    description = 'Compile client side assets for development'
+    args = ['run', 'build']
+}
+
+task buildApp(type: NpmTask, dependsOn: 'npmInstall') {
+    group = 'build'
+    description = 'Compile client side assets for production'
+    args = ['run', 'build']
+}
+
+task testApp(type: NpmTask, dependsOn: 'npmInstall') {
+    group = 'verification'
+    description = 'Executes client side unit tests'
+//    args = ['run', 'test']
+    args = ['run', 'unit']
+}
+
+bootRun.dependsOn(buildAppDev)
+
+war.dependsOn(buildApp)
+
+test.dependsOn(testApp)
+
+clean {
+    def ft = fileTree('src/main/webapp').exclude(".gitkeep")
+    ft.visit { FileVisitDetails fvd ->
+        delete fvd.file
+    }
+}
+```
+
+
 ### Sample grails command
 ```
 # grails clean-app
