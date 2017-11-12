@@ -5,10 +5,9 @@
   "author": "Mamun <Mamun>",
   "private": true,
   "scripts": {
-    "buildDev": "node build/build.js",
-    "buildProd": "node build/build.js",
+    "dev": "webpack --config build/webpack.dev.conf.js --watch",
+    "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
-    "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {

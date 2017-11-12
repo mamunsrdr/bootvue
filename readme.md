@@ -31,31 +31,34 @@ apply plugin: "com.moowork.node"
 ```
 node {
     version = '9.1.0'
+    npmVersion = '5.5.1'
+    yarnVersion = '1.3.2'
     download = true
+    distBaseUrl = 'https://nodejs.org/dist'
     nodeModulesDir = file("src/app")
 }
 
-task buildAppDev(type: NpmTask, dependsOn: 'npmInstall') {
-    group = 'build'
-    description = 'Compile client side assets for development'
-    args = ['run', 'buildDev']
+task watchApp(type: YarnTask, dependsOn: 'yarn') {
+    group = 'application'
+    description = 'Build and watch client side assets'
+    args = ['run', 'dev']
 }
 
-task buildAppProd(type: NpmTask, dependsOn: 'npmInstall') {
+task buildApp(type: YarnTask, dependsOn: 'yarn') {
     group = 'build'
     description = 'Compile client side assets for production'
-    args = ['run', 'buildProd']
+    args = ['run', 'build']
 }
 
-task testApp(type: NpmTask, dependsOn: 'npmInstall') {
+task testApp(type: YarnTask, dependsOn: 'yarn') {
     group = 'verification'
     description = 'Executes client side unit tests'
-    args = ['run', 'test']
+    args = ['run', 'unit']
 }
 
-bootRun.dependsOn(buildAppDev)
+bootRun.dependsOn(buildApp)
 
-war.dependsOn(buildAppProd)
+assetCompile.dependsOn(buildApp)
 
 test.dependsOn(testApp)
 
@@ -68,10 +71,17 @@ clean {
 ```
 
 
-### Sample grails command
+### Sample command
 ```
-# grails clean-app
+//run this watch command first on terminal
+# ./gradlew watchApp
+// or for win
+# gradlew watchApp
+
+// then start grails application
 # grails run-app
+
+// build war file as usual
 # grails war
 ```
 [Guide followed](http://guides.grails.org/angular2-combined/guide/index.html). Work is still in-progress. Contributions are welcome.
