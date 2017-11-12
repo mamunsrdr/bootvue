@@ -73,13 +73,13 @@ clean {
 
 ### Sample command
 ```
-//run this watch command first on terminal
+// start grails application
+# grails run-app
+
+// run this watcher task
 # ./gradlew watchApp
 // or for win
 # gradlew watchApp
-
-// then start grails application
-# grails run-app
 
 // build war file as usual
 # grails war
